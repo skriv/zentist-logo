@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: transparent;
+}
+
+.zentist-logos {
+  --zl-gap: 1.25rem;
+  --zl-logo-max-h: 3.5rem;
+  --zl-card-bg: #f7f9fc;
+  --zl-preview-bg-light: #ffffff;
+  --zl-preview-bg-dark: #0f0f12;
+  --zl-text: #212a37;
+  --zl-muted: #6b6b73;
+  --zl-btn-bg: rgba(4, 133, 247, 0.15);
+  --zl-btn-text: #0485f7;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  color: var(--zl-text);
+}
+
+.zentist-logos__header {
+  margin-bottom: 1.75rem;
+}
+
+.zentist-logos__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.zentist-toggle-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5625rem;
+}
+
+.zentist-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.6875rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #f7f9fc;
+  color: #000000;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.zentist-toggle.is-active {
+  background: rgba(4, 133, 247, 0.15);
+  color: #0485f7;
+}
+
+.zentist-toggle:focus-visible {
+  outline: 0.125rem solid #0485f7;
+  outline-offset: 0.125rem;
+}
+
+.zentist-logos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--zl-gap);
+}
+
+@media (min-width: 40rem) {
+  .zentist-logos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64rem) {
+  .zentist-logos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.logo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1rem;
+  background: var(--zl-card-bg);
+  border: 0;
+}
+
+.logo-card__preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 15.9375rem;
+  padding: 1rem;
+  background: var(--zl-preview-bg-light);
+  transition: background 0.2s ease;
+}
+
+.zentist-logos--dark .logo-card__preview {
+  background: var(--zl-preview-bg-dark);
+}
+
+.logo-display {
+  position: relative;
+  margin: 0 auto;
+  max-height: var(--zl-logo-max-h);
+  max-width: 100%;
+}
+
+.zentist-logos--full .logo-display {
+  aspect-ratio: var(--logo-aspect);
+  width: min(calc(var(--zl-logo-max-h) * var(--logo-aspect)), 100%);
+  height: auto;
+}
+
+.zentist-logos--icon .logo-display {
+  width: var(--zl-logo-max-h);
+  height: var(--zl-logo-max-h);
+}
+
+.logo-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.zentist-logos--full .logo-icon {
+  width: var(--icon-share);
+  height: 100%;
+}
+
+.zentist-logos--icon .logo-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-icon__layer {
+  position: absolute;
+}
+
+.logo-icon__layer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-name {
+  position: absolute;
+  left: var(--name-left);
+  top: var(--name-top);
+  width: var(--name-width);
+  height: var(--name-height);
+  object-fit: contain;
+  object-position: left top;
+  transition: filter 0.2s ease;
+}
+
+.zentist-logos--icon .logo-name {
+  display: none;
+}
+
+.logo-display--text .logo-name {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.zentist-logos--icon .logo-display--text {
+  width: calc(var(--zl-logo-max-h) * var(--logo-aspect));
+  height: var(--zl-logo-max-h);
+  aspect-ratio: var(--logo-aspect);
+}
+
+.zentist-logos--icon .logo-display--text .logo-name {
+  display: block;
+}
+
+.zentist-logos--dark .logo-name {
+  filter: brightness(0) invert(1);
+}
+
+.zentist-logos--dark .logo-card__actions-label {
+  color: #ffffff;
+}
+
+.logo-card__actions {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.logo-card:hover .logo-card__actions,
+.logo-card:focus-within .logo-card__actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.logo-card__actions-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--zl-text);
+}
+
+.logo-card__actions-buttons {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.logo-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: var(--zl-btn-bg);
+  color: var(--zl-btn-text);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.6875rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.logo-card__btn:hover {
+  opacity: 0.85;
+}
