@@ -1,3 +1,6 @@
+// Версия виджета. Обновляйте только это значение при изменениях.
+const APP_VERSION = '1.0.0';
+
 const ICON_SIZE = 140;
 const ASSET_BASE = 'assets/raw/';
 
@@ -466,8 +469,14 @@ async function downloadPng(logo) {
   });
 }
 
+function renderVersion() {
+  const el = document.querySelector('[data-version]');
+  if (el) el.textContent = `v${APP_VERSION}`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderGrid();
   setupControls();
   updateRootClasses();
+  renderVersion();
 });
