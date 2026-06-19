@@ -1,5 +1,5 @@
 // Версия виджета. Обновляйте только это значение при изменениях.
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.1.1';
 
 const ICON_SIZE = 140;
 const ASSET_BASE = 'assets/raw/';
@@ -19,11 +19,11 @@ const LOGOS = [
     label: 'Remit AI',
     fullW: 570.338,
     fullH: 140,
-    nameFile: 'ba53ffb65ab8dd3d2167b250435d1d9dfcfbdc54',
+    nameFile: 'f0716c50c1954b82a9692dae68b355cf1731bfef',
     nameX: 180,
-    nameY: 20.46,
+    nameY: 29.74,
     nameW: 390.338,
-    nameH: 123.544,
+    nameH: 80.52,
     layers: [
       { file: '86e4b8561a0838c63cf936fdeec0ee4f65bc5da7', dark: '4f7064c1a29a023c6e9eb68239702ec5b9d56a18', light: '69ffc37de7ccbb1465632fb8e3c6c7190f8a79fb', inset: [5.32, 41.17, 41.17, 5.32] },
       { file: '813a3f4fe4dc9da88ca11f8d7c6d5e17f42940aa', dark: '965d19776bd377ba3f72729ad9f73c49dece9251', light: '1b8b09ba0aad2aa81b5248586ed619aa29d4fae1', inset: [41.17, 41.17, 5.32, 5.32] },
