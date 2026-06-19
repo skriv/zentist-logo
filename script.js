@@ -1,5 +1,5 @@
 // Версия виджета. Обновляйте только это значение при изменениях.
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.2.1';
 
 const ICON_SIZE = 140;
 const ASSET_BASE = 'assets/raw/';
@@ -46,10 +46,10 @@ const LOGOS = [
     nameW: 303.644,
     nameH: 81.18,
     layers: [
-      { file: '6ae96650719b57be306a64153b50d954a89f208d', dark: '269fe70f8733b69f92baab99c1e56fda50604ef2', light: '8826e1bd3f84541c728d84384c55e62b45bc24f3', inset: [2.93, 42.93, 42.93, 2.93] },
-      { file: '2efd6aa3b3a27c66ed1dd3108a6ab5d4e57b5718', dark: '27d5ebd0a7bd30e67b764b185bdaa0c931610b37', light: 'eb7b7c2afc297aeac2d80dc8d0d49fee3f0cdcaa', inset: [2.93, 2.93, 42.93, 42.93] },
-      { file: 'c2ea1e5fe85e5545a992656670b04a93dde7226f', dark: '0dd8424206e9eb797dbdea44b21cc695c347ff8c', light: '0b93b8f3b28b7a7bb92a5e9bb6c7bd28fa50b57f', inset: [42.93, 42.93, 2.93, 2.93] },
-      { file: '644f3a447713778d5d680da73da92360f33a8b9a', dark: '1f2b68dc5563dd9a302262a3371f876a4f8f4475', light: '00ddb4672056c217e277b4dd06cc134f329104ba', inset: [42.93, 2.93, 2.93, 42.93] },
+      { file: '6ae96650719b57be306a64153b50d954a89f208d', dark: 'e7319aeb022d06c0afbfa1e82cc26fe6a78dab5b', light: '0dfae7630798b6baef6d65cab8df3e5f7fbbae45', inset: [2.93, 42.93, 42.93, 2.93] },
+      { file: '2efd6aa3b3a27c66ed1dd3108a6ab5d4e57b5718', dark: '40e1ac37056d7dae42ec4a5f274d950aa17c375f', light: '8bc24215cc5b222ba2404edcb501484f6293ffd7', inset: [2.93, 2.93, 42.93, 42.93] },
+      { file: 'c2ea1e5fe85e5545a992656670b04a93dde7226f', dark: '26fbb0a4f3b3c8676888fc4ea2afbb3639299dae', light: '2b9a6c5a5586e4dfa860820c95f60753e8f1810b', inset: [42.93, 42.93, 2.93, 2.93] },
+      { file: '644f3a447713778d5d680da73da92360f33a8b9a', dark: '49335ab04a2adb1faeb9fc93ca3e6a157a5f9da3', light: '494277da9ea7102a0b2eb18ce32efaae736f8537', inset: [42.93, 2.93, 2.93, 42.93] },
       { file: '4b7b7419abe83f47ff6a68e96f5bf719695051ef', dark: '9a35540e95a344f915b374b02116fb7ce3692e01', light: '4fe6f303d91d66787175ebe1c979d2b81674727b', inset: [80, 40, 0, 40] },
       { file: '4b7b7419abe83f47ff6a68e96f5bf719695051ef', dark: '9a35540e95a344f915b374b02116fb7ce3692e01', light: '4fe6f303d91d66787175ebe1c979d2b81674727b', inset: [40, 0, 40, 80] },
       { file: '4b7b7419abe83f47ff6a68e96f5bf719695051ef', dark: '9a35540e95a344f915b374b02116fb7ce3692e01', light: '4fe6f303d91d66787175ebe1c979d2b81674727b', inset: [40, 80, 40, 0] },
