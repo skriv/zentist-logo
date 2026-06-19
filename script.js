@@ -1,5 +1,5 @@
 // Версия виджета. Обновляйте только это значение при изменениях.
-const APP_VERSION = '1.1.1';
+const APP_VERSION = '1.2.0';
 
 const ICON_SIZE = 140;
 const ASSET_BASE = 'assets/raw/';
