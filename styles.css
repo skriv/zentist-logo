@@ -262,3 +262,9 @@ body {
 .logo-card__btn:hover {
   opacity: 0.85;
 }
+
+.logo-card__btn.is-flashing {
+  background: rgba(4, 133, 247, 0.15);
+  color: #0485f7;
+  opacity: 1;
+}

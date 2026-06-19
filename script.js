@@ -262,7 +262,13 @@ function createCard(logo) {
   pngBtn.dataset.download = 'png';
   pngBtn.textContent = 'PNG';
 
-  buttons.append(svgBtn, pngBtn);
+  const copyBtn = document.createElement('button');
+  copyBtn.type = 'button';
+  copyBtn.className = 'logo-card__btn';
+  copyBtn.dataset.download = 'copy';
+  copyBtn.textContent = 'Copy';
+
+  buttons.append(svgBtn, pngBtn, copyBtn);
   actions.append(label, buttons);
   card.append(preview, actions);
   return card;
@@ -330,8 +336,10 @@ function setupControls() {
     const format = btn.dataset.download;
     if (format === 'svg') {
       downloadSvg(logo);
-    } else {
+    } else if (format === 'png') {
       downloadPng(logo);
+    } else if (format === 'copy') {
+      copySvg(logo, btn);
     }
   });
 }
@@ -514,6 +522,45 @@ async function downloadPng(logo) {
       resolve();
     }, 'image/png');
   });
+}
+
+async function copySvg(logo, btn) {
+  const svg = await buildCompositeSvg(logo, state.view, state.theme, state.mono);
+  const original = btn ? btn.textContent : '';
+  try {
+    await navigator.clipboard.writeText(svg);
+    if (btn) flashButton(btn, 'Copied', original);
+  } catch (err) {
+    const ok = legacyCopyText(svg);
+    if (btn) flashButton(btn, ok ? 'Copied' : 'Error', original);
+  }
+}
+
+function legacyCopyText(text) {
+  const area = document.createElement('textarea');
+  area.value = text;
+  area.style.position = 'fixed';
+  area.style.opacity = '0';
+  document.body.appendChild(area);
+  area.select();
+  let ok = false;
+  try {
+    ok = document.execCommand('copy');
+  } catch (err) {
+    ok = false;
+  }
+  document.body.removeChild(area);
+  return ok;
+}
+
+function flashButton(btn, message, original) {
+  btn.textContent = message;
+  btn.classList.add('is-flashing');
+  window.clearTimeout(btn._flashTimer);
+  btn._flashTimer = window.setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove('is-flashing');
+  }, 1200);
 }
 
 function renderVersion() {
