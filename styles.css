@@ -206,10 +206,6 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.zentist-logos--dark .logo-card__actions-label {
-  color: #ffffff;
-}
-
 .logo-card__actions {
   position: absolute;
   right: 1rem;
@@ -217,7 +213,8 @@ body {
   left: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 0.5rem;
   padding: 1rem;
   opacity: 0;
   pointer-events: none;
@@ -230,41 +227,168 @@ body {
   pointer-events: auto;
 }
 
-.logo-card__actions-label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  color: var(--zl-text);
+/* Split-кнопка с дропдауном */
+.logo-menu {
+  position: relative;
 }
 
-.logo-card__actions-buttons {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.logo-card__btn {
+.logo-menu__trigger {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.6875rem;
   border: 0;
-  background: var(--zl-btn-bg);
-  color: var(--zl-btn-text);
+  border-radius: 0.5rem;
+  background: #f7f9fc;
+  color: #000000;
   font: inherit;
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.25rem;
-  padding: 0.5rem 0.6875rem;
-  border-radius: 0.5rem;
+  white-space: nowrap;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.logo-card__btn:hover {
-  opacity: 0.85;
+.logo-menu__trigger:hover {
+  background: rgba(4, 133, 247, 0.08);
 }
 
-.logo-card__btn.is-flashing {
+.logo-menu__trigger[aria-expanded='true'] {
   background: rgba(4, 133, 247, 0.15);
   color: #0485f7;
+}
+
+.logo-menu__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-menu__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-menu__chevron svg {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: transform 0.15s ease;
+}
+
+.logo-menu__trigger[aria-expanded='true'] .logo-menu__chevron svg {
+  transform: rotate(180deg);
+}
+
+.logo-menu__list {
+  position: absolute;
+  bottom: calc(100% + 0.375rem);
+  left: 0;
+  z-index: 5;
+  min-width: 9.4375rem;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 -6px 12px rgba(0, 0, 0, 0.03);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.25rem);
+  transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s ease;
+}
+
+.logo-menu.is-open .logo-menu__list {
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.logo-menu__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 2.25rem;
+  padding: 0.375rem 0.75rem;
+  border: 0;
+  border-radius: 1.25rem;
+  background: transparent;
+  color: #18181b;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.logo-menu__item:hover,
+.logo-menu__item:focus-visible {
+  background: #dfedff;
+  color: #128af7;
+  outline: none;
+}
+
+/* Toast */
+.zentist-toast-container {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.zentist-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 -6px 12px rgba(0, 0, 0, 0.03);
+  color: #18181b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.43;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.zentist-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zentist-toast__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.zentist-toast__icon svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
 }
