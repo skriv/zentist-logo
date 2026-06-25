@@ -42,10 +42,159 @@ body {
 
 .zentist-logos__version {
   flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
   font-size: 0.75rem;
   font-weight: 500;
   color: #a0a0a8;
   font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(160, 160, 168, 0.4);
+  text-underline-offset: 0.125rem;
+  transition: color 0.15s ease;
+}
+
+.zentist-logos__version:hover {
+  color: #0485f7;
+  text-decoration-color: currentColor;
+}
+
+/* Changelog drawer */
+.changelog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.changelog-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.changelog-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2001;
+  width: min(28rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.375rem 1.5rem 1.5rem;
+  background: #ffffff;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 -6px 12px rgba(0, 0, 0, 0.03);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.25s ease, visibility 0.25s ease;
+}
+
+.changelog-drawer.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.changelog-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.changelog-drawer__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #18181b;
+}
+
+.changelog-drawer__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #f7f9fc;
+  color: #000000;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.changelog-drawer__close:hover {
+  background: rgba(4, 133, 247, 0.15);
+  color: #0485f7;
+}
+
+.changelog-drawer__close svg {
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+.changelog-drawer__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.changelog-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.changelog-group__date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #71717a;
+}
+
+.changelog-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.changelog-entry__version {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.changelog-entry__list {
+  margin: 0;
+  padding-left: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.changelog-entry__list li {
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: #3f3f46;
 }
 
 .zentist-toggle-group {
