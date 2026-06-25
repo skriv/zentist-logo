@@ -1,6 +1,6 @@
 {
   "name": "zentist-logos",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "Static gallery of Zentist brand logos with SVG/PNG export and pre-generated logo files.",
   "private": true,
   "scripts": {

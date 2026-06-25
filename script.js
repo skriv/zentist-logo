@@ -1,5 +1,67 @@
 // Версия виджета. Обновляйте только это значение при изменениях.
-const APP_VERSION = '1.5.1';
+const APP_VERSION = '1.6.0';
+
+// История изменений. Новые версии добавляйте сверху.
+// Дата в формате YYYY-MM-DD.
+const CHANGELOG = [
+  {
+    version: '1.6.0',
+    date: '2026-06-25',
+    changes: ['Added a Changelog drawer — click the version number to open it.'],
+  },
+  {
+    version: '1.5.1',
+    date: '2026-06-25',
+    changes: [
+      'Export now works when the page is opened as a local file (file://).',
+      'Save and Copy buttons are now visible in dark theme.',
+    ],
+  },
+  {
+    version: '1.5.0',
+    date: '2026-06-25',
+    changes: ['Added toast notifications after Save and Copy actions.'],
+  },
+  {
+    version: '1.4.0',
+    date: '2026-06-25',
+    changes: ['Redesigned card actions into Save and Copy split-button dropdowns.'],
+  },
+  {
+    version: '1.3.0',
+    date: '2026-06-25',
+    changes: ['Added pre-generated static logo files and the Link URL action.'],
+  },
+  {
+    version: '1.2.1',
+    date: '2026-06-19',
+    changes: ['Updated Caviar monochrome icon variants.'],
+  },
+  {
+    version: '1.2.0',
+    date: '2026-06-19',
+    changes: ['Added Copy to copy a logo as SVG to the clipboard.'],
+  },
+  {
+    version: '1.1.1',
+    date: '2026-06-19',
+    changes: ['Updated the Remit AI logo (removed the "by Zentist" wordmark).'],
+  },
+  {
+    version: '1.1.0',
+    date: '2026-06-19',
+    changes: ['Added Monochrome mode with light/dark icon variants.'],
+  },
+  {
+    version: '1.0.0',
+    date: '2026-06-18',
+    changes: [
+      'Initial release: logo gallery with Full Logo / Icon and Light / Dark toggles.',
+      'SVG and PNG export (PNG at a minimum of 2000px wide).',
+      'TikTok Sans font and version label.',
+    ],
+  },
+];
 
 const ASSET_BASE = 'assets/raw/';
 // Папка с предгенерированными логотипами (см. build-logos.js).
@@ -430,9 +492,124 @@ function renderVersion() {
   if (el) el.textContent = `v${APP_VERSION}`;
 }
 
+const CLOSE_ICON =
+  '<svg width="6" height="6" viewBox="0 0 6 6" fill="none" aria-hidden="true"><path d="M4.80682 5.45455L0 0.647727L0.647727 0L5.45455 4.80682L4.80682 5.45455ZM0.647727 5.45455L0 4.80682L4.80682 0L5.45455 0.647727L0.647727 5.45455Z" fill="currentColor"/></svg>';
+
+function formatChangelogDate(iso) {
+  const date = new Date(`${iso}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return iso;
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+let changelogEls;
+
+function setupChangelog() {
+  const trigger = document.querySelector('[data-changelog-open]');
+  if (!trigger) return;
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'changelog-backdrop';
+
+  const drawer = document.createElement('aside');
+  drawer.className = 'changelog-drawer';
+  drawer.setAttribute('role', 'dialog');
+  drawer.setAttribute('aria-modal', 'true');
+  drawer.setAttribute('aria-label', 'Changelog');
+
+  const header = document.createElement('div');
+  header.className = 'changelog-drawer__header';
+
+  const title = document.createElement('h2');
+  title.className = 'changelog-drawer__title';
+  title.textContent = 'Changelog';
+
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'changelog-drawer__close';
+  close.setAttribute('aria-label', 'Close');
+  close.innerHTML = CLOSE_ICON;
+
+  header.append(title, close);
+
+  const body = document.createElement('div');
+  body.className = 'changelog-drawer__body';
+
+  // Группируем версии по дате (записи идут от новых к старым).
+  const groups = [];
+  CHANGELOG.forEach((entry) => {
+    let group = groups[groups.length - 1];
+    if (!group || group.date !== entry.date) {
+      group = { date: entry.date, entries: [] };
+      groups.push(group);
+    }
+    group.entries.push(entry);
+  });
+
+  groups.forEach((group) => {
+    const groupEl = document.createElement('section');
+    groupEl.className = 'changelog-group';
+
+    const dateEl = document.createElement('div');
+    dateEl.className = 'changelog-group__date';
+    dateEl.textContent = formatChangelogDate(group.date);
+    groupEl.appendChild(dateEl);
+
+    group.entries.forEach((entry) => {
+      const entryEl = document.createElement('div');
+      entryEl.className = 'changelog-entry';
+
+      const version = document.createElement('span');
+      version.className = 'changelog-entry__version';
+      version.textContent = `v${entry.version}`;
+
+      const list = document.createElement('ul');
+      list.className = 'changelog-entry__list';
+      entry.changes.forEach((change) => {
+        const li = document.createElement('li');
+        li.textContent = change;
+        list.appendChild(li);
+      });
+
+      entryEl.append(version, list);
+      groupEl.appendChild(entryEl);
+    });
+
+    body.appendChild(groupEl);
+  });
+
+  drawer.append(header, body);
+  document.body.append(backdrop, drawer);
+
+  changelogEls = { backdrop, drawer };
+
+  trigger.addEventListener('click', openChangelog);
+  close.addEventListener('click', closeChangelog);
+  backdrop.addEventListener('click', closeChangelog);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeChangelog();
+  });
+}
+
+function openChangelog() {
+  if (!changelogEls) return;
+  changelogEls.backdrop.classList.add('is-open');
+  changelogEls.drawer.classList.add('is-open');
+}
+
+function closeChangelog() {
+  if (!changelogEls) return;
+  changelogEls.backdrop.classList.remove('is-open');
+  changelogEls.drawer.classList.remove('is-open');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderGrid();
   setupControls();
   updateRootClasses();
   renderVersion();
+  setupChangelog();
 });
