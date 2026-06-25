@@ -9,9 +9,9 @@ Built with vanilla HTML, CSS, and JavaScript — no build step and no dependenci
 - **Full Logo / Icon** — switch between the full lockup (icon + wordmark) and the icon only.
 - **Dark Mode** — toggle the preview background between light and dark; wordmarks invert automatically.
 - **Monochrome** — show single-color versions of every logo (except Zentist). In light theme it renders the dark monochrome logo; in dark theme it renders the light monochrome logo.
-- **Download SVG / PNG** — per-card export buttons that appear on hover. PNGs are rendered at a minimum of 2000px wide. Gradients are preserved in exports via scoped SVG IDs.
-- **Copy** — copies the current logo's SVG markup to the clipboard.
-- **Link** — copies a direct URL to the pre-generated SVG file for the current state (e.g. `https://your-domain.com/logos/remit-ai/remit-ai-full-light.svg`). The URL is resolved against the current page location, so it works both locally and on a deployed domain.
+- **Save / Copy dropdowns** — each card shows two split-button dropdowns on hover:
+  - **Save** → `SVG` / `PNG` download. PNGs are rendered at a minimum of 2000px wide. Gradients are preserved in exports via scoped SVG IDs.
+  - **Copy** → `File to Clipboard` (copies the current logo's SVG markup) / `Link URL` (copies a direct URL to the pre-generated SVG file for the current state, e.g. `https://your-domain.com/logos/remit-ai/remit-ai-full-light.svg`, resolved against the current page location so it works both locally and on a deployed domain).
 - **Responsive grid** — 1 / 2 / 3 columns depending on viewport width.
 - **Version badge** — shown in the header; update a single constant to bump it.
 - Logo config and the SVG-composition logic live in `logo-builder.js`, shared by the page and the build script (single source of truth).
@@ -45,9 +45,9 @@ npx serve .
 
 Then open [http://localhost:8000](http://localhost:8000).
 
-## Pre-generating logo files (for the Link button)
+## Pre-generating logo files (for the Copy → Link URL action)
 
-The **Link** button points to static files under `logos/`. Regenerate them whenever a
+The **Copy → Link URL** action points to static files under `logos/`. Regenerate them whenever a
 logo's config or assets change:
 
 ```bash
