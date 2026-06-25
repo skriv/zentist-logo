@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
+<defs>
+<linearGradient id="logo-caviar-0-paint0_linear_1673_576" x1="65.8995" y1="9.89949" x2="9.89949" y2="65.8995" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA201"/>
+<stop offset="1" stop-color="#FFA201" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-caviar-1-paint0_linear_1673_590" x1="9.89949" y1="9.8995" x2="65.8995" y2="65.8995" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA201" stop-opacity="0"/>
+<stop offset="1" stop-color="#FFA201"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-caviar-2-paint0_linear_1673_548" x1="9.8995" y1="9.89949" x2="65.8995" y2="65.8995" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA201"/>
+<stop offset="1" stop-color="#FFA201" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-caviar-3-paint0_linear_1673_574" x1="65.8995" y1="9.89949" x2="9.8995" y2="65.8995" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFA201" stop-opacity="0"/>
+<stop offset="1" stop-color="#FFA201"/>
+</linearGradient>
+</defs>
+<g transform="translate(4.102 4.102) scale(0.999960421641446 0.999960421641446)"><path id="Vector" opacity="0.5" d="M56 0L0 56L19.799 75.799L75.799 19.799L56 0Z" fill="url(#logo-caviar-0-paint0_linear_1673_576)"/></g>
+<g transform="translate(60.102000000000004 4.102) scale(0.9999604216414463 0.999960421641446)"><path id="Vector" opacity="0.5" d="M0 19.799L56 75.799L75.799 56L19.799 0L0 19.799Z" fill="url(#logo-caviar-1-paint0_linear_1673_590)"/></g>
+<g transform="translate(4.102 60.102000000000004) scale(0.999960421641446 0.9999604216414463)"><path id="Vector" opacity="0.5" d="M0 19.799L56 75.799L75.799 56L19.799 0L0 19.799Z" fill="url(#logo-caviar-2-paint0_linear_1673_548)"/></g>
+<g transform="translate(60.102000000000004 60.102000000000004) scale(0.9999604216414463 0.9999604216414463)"><path id="Vector" opacity="0.5" d="M56 0L0 56L19.799 75.799L75.799 19.799L56 0Z" fill="url(#logo-caviar-3-paint0_linear_1673_574)"/></g>
+<g transform="translate(56 112) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #FFA201)"/></g>
+<g transform="translate(112 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #FFA201)"/></g>
+<g transform="translate(0 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #FFA201)"/></g>
+<g transform="translate(56 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #FFA201)"/></g>
+</svg>

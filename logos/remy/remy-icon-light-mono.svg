@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
+<defs>
+<linearGradient id="logo-remy-0-paint0_linear_7_343" x1="126" y1="70" x2="14" y2="70" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-remy-1-paint0_linear_7_341" x1="126" y1="0" x2="14" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1"/>
+</linearGradient>
+</defs>
+<g transform="translate(0 0) scale(1 1)"><path id="Vector" opacity="0.3" d="M140 70C140 51.4348 132.625 33.6301 119.497 20.5025C106.37 7.37498 88.5652 0 70 0C51.4348 0 33.6301 7.37498 20.5025 20.5025C7.37498 33.6301 0 51.4348 0 70H28C28 58.8609 32.425 48.178 40.3015 40.3015C48.178 32.425 58.8609 28 70 28C81.1391 28 91.822 32.425 99.6985 40.3015C107.575 48.178 112 58.8609 112 70H140Z" fill="url(#logo-remy-0-paint0_linear_7_343)"/></g>
+<g transform="translate(0 70) scale(1 1)"><path id="Vector" opacity="0.3" d="M140 0C140 18.5652 132.625 36.3699 119.497 49.4975C106.37 62.625 88.5652 70 70 70C51.4348 70 33.6301 62.625 20.5025 49.4975C7.37498 36.3699 0 18.5652 0 0H28C28 11.1391 32.425 21.822 40.3015 29.6985C48.178 37.575 58.8609 42 70 42C81.1391 42 91.822 37.575 99.6985 29.6985C107.575 21.822 112 11.1391 112 0H140Z" fill="url(#logo-remy-1-paint0_linear_7_341)"/></g>
+<g transform="translate(0 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, black)"/></g>
+<g transform="translate(112 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, black)"/></g>
+<g transform="translate(56 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, black)"/></g>
+</svg>

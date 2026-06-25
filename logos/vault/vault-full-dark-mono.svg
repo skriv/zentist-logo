@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 421.481 140" fill="none">
+<defs>
+<linearGradient id="logo-vault-0-paint0_linear_7_283" x1="0" y1="14" x2="112" y2="14" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-vault-1-paint0_linear_7_263" x1="14" y1="0" x2="14" y2="112" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-vault-2-paint0_linear_7_267" x1="14" y1="0" x2="14" y2="112" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-vault-3-paint0_linear_7_261" x1="0" y1="14" x2="112" y2="14" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<g transform="translate(14 0) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 28H112V0H0V28Z" fill="url(#logo-vault-0-paint0_linear_7_283)"/></g>
+<g transform="translate(0 14) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 0V112H28V0H0Z" fill="url(#logo-vault-1-paint0_linear_7_263)"/></g>
+<g transform="translate(112 14) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 0V112H28V0H0Z" fill="url(#logo-vault-2-paint0_linear_7_267)"/></g>
+<g transform="translate(14 112) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 28H112V0H0V28Z" fill="url(#logo-vault-3-paint0_linear_7_261)"/></g>
+<g transform="translate(56 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, white)"/></g>
+<g transform="translate(112 112) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, white)"/></g>
+<g transform="translate(0 112) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, white)"/></g>
+<g transform="translate(112 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, white)"/></g>
+<g transform="translate(0 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, white)"/></g>
+<g transform="translate(180 30.56) scale(1 1)"><g id="name">
+<path d="M23.98 77.55L0 0H13.31L34.54 71.5L55.66 0H68.97L44.99 77.55H23.98Z" fill="white"/>
+<path d="M87.5196 78.87C81.8729 78.87 77.2529 77.4033 73.6596 74.47C70.1396 71.5367 68.3796 67.5767 68.3796 62.59C68.3796 57.75 69.9929 53.9 73.2196 51.04C76.5196 48.1067 80.8096 46.09 86.0896 44.99L109.19 40.15V48.29L90.9296 52.47C87.6296 53.2033 85.0629 54.3033 83.2296 55.77C81.4696 57.1633 80.5896 59.1433 80.5896 61.71C80.5896 64.35 81.4696 66.3667 83.2296 67.76C84.9896 69.1533 87.3729 69.85 90.3796 69.85C93.1663 69.85 95.5496 69.3 97.5296 68.2C99.5829 67.0267 101.16 65.45 102.26 63.47C103.433 61.4167 104.02 59.1067 104.02 56.54V40.26C104.02 36.74 103.103 34.0267 101.27 32.12C99.4363 30.14 96.7596 29.15 93.2396 29.15C89.9396 29.15 87.2996 29.9933 85.3196 31.68C83.3396 33.2933 81.9829 35.5667 81.2496 38.5L69.9196 36.08C71.0196 31.1667 73.6229 27.2067 77.7296 24.2C81.9096 21.12 87.1896 19.58 93.5696 19.58C100.976 19.58 106.513 21.4867 110.18 25.3C113.92 29.04 115.79 34.2467 115.79 40.92V66.22L120.08 77.55H107.76L105.23 70.4C103.47 73.1133 101.086 75.2033 98.0796 76.67C95.1463 78.1367 91.6263 78.87 87.5196 78.87Z" fill="white"/>
+<path d="M151.048 78.87C146.208 78.87 141.991 78.0267 138.398 76.34C134.878 74.58 132.128 71.94 130.148 68.42C128.168 64.9 127.178 60.5367 127.178 55.33V20.9H138.948V54.89C138.948 59.5833 140.048 63.0667 142.248 65.34C144.521 67.6133 147.455 68.75 151.048 68.75C154.715 68.75 157.648 67.6133 159.848 65.34C162.048 63.0667 163.148 59.5833 163.148 54.89V20.9H174.918V55.33C174.918 60.5367 173.928 64.9 171.948 68.42C170.041 71.94 167.291 74.58 163.698 76.34C160.105 78.0267 155.888 78.87 151.048 78.87Z" fill="white"/>
+<path d="M186.166 77.55V0H197.936V77.55H186.166Z" fill="white"/>
+<path d="M232.791 78.65C227.584 78.65 223.624 77.3667 220.911 74.8C218.198 72.16 216.841 68.2 216.841 62.92V8.25L228.611 1.98V60.72C228.611 63.2867 229.198 65.1933 230.371 66.44C231.618 67.6867 233.378 68.31 235.651 68.31C236.458 68.31 237.264 68.2367 238.071 68.09C238.951 67.9433 239.904 67.6867 240.931 67.32V77.33C239.538 77.77 238.181 78.1 236.861 78.32C235.614 78.54 234.258 78.65 232.791 78.65ZM205.841 30.36V20.9H241.481V30.36H205.841Z" fill="white"/>
+</g></g>
+</svg>
