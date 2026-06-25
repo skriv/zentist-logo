@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
+<defs>
+<linearGradient id="logo-vault-0-paint0_linear_1673_584" x1="0" y1="14" x2="112" y2="14" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A1FC" stop-opacity="0"/>
+<stop offset="1" stop-color="#0698FE"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-vault-1-paint0_linear_1673_582" x1="14" y1="0" x2="14" y2="112" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0698FE"/>
+<stop offset="1" stop-color="#0698FE" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-vault-2-paint0_linear_1673_578" x1="14" y1="0" x2="14" y2="112" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0698FE" stop-opacity="0"/>
+<stop offset="1" stop-color="#0698FE"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-vault-3-paint0_linear_1673_594" x1="0" y1="14" x2="112" y2="14" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0698FE"/>
+<stop offset="1" stop-color="#0698FE" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<g transform="translate(14 0) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 28H112V0H0V28Z" fill="url(#logo-vault-0-paint0_linear_1673_584)"/></g>
+<g transform="translate(0 14) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 0V112H28V0H0Z" fill="url(#logo-vault-1-paint0_linear_1673_582)"/></g>
+<g transform="translate(112 14) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 0V112H28V0H0Z" fill="url(#logo-vault-2-paint0_linear_1673_578)"/></g>
+<g transform="translate(14 112) scale(1 1)"><path id="Vector" opacity="0.3" d="M0 28H112V0H0V28Z" fill="url(#logo-vault-3-paint0_linear_1673_594)"/></g>
+<g transform="translate(56 56) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #0698FE)"/></g>
+<g transform="translate(112 112) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #0698FE)"/></g>
+<g transform="translate(0 112) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #0698FE)"/></g>
+<g transform="translate(112 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #0698FE)"/></g>
+<g transform="translate(0 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, #0698FE)"/></g>
+</svg>

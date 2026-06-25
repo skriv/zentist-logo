@@ -10,24 +10,30 @@ Built with vanilla HTML, CSS, and JavaScript — no build step and no dependenci
 - **Dark Mode** — toggle the preview background between light and dark; wordmarks invert automatically.
 - **Monochrome** — show single-color versions of every logo (except Zentist). In light theme it renders the dark monochrome logo; in dark theme it renders the light monochrome logo.
 - **Download SVG / PNG** — per-card export buttons that appear on hover. PNGs are rendered at a minimum of 2000px wide. Gradients are preserved in exports via scoped SVG IDs.
+- **Copy** — copies the current logo's SVG markup to the clipboard.
+- **Link** — copies a direct URL to the pre-generated SVG file for the current state (e.g. `https://your-domain.com/logos/remit-ai/remit-ai-full-light.svg`). The URL is resolved against the current page location, so it works both locally and on a deployed domain.
 - **Responsive grid** — 1 / 2 / 3 columns depending on viewport width.
 - **Version badge** — shown in the header; update a single constant to bump it.
-- Logos are declared in `script.js` and rendered from SVG layers in `assets/raw/`.
+- Logo config and the SVG-composition logic live in `logo-builder.js`, shared by the page and the build script (single source of truth).
 
 ## Project structure
 
 ```
 .
-├── index.html       # Page markup and controls
-├── styles.css       # Styles, themes, and responsive grid
-├── script.js        # Logo configuration, rendering, and export logic
+├── index.html        # Page markup and controls
+├── styles.css        # Styles, themes, and responsive grid
+├── logo-builder.js   # Shared config + SVG composition (browser + Node)
+├── script.js         # Page UI: rendering, toggles, export, copy/link
+├── build-logos.js    # Node script that pre-generates all logo files
+├── logos/            # Pre-generated SVG files (committed; served as URLs)
+│   └── <brand>/<brand>-<view>-<theme>[-mono].svg
 └── assets/
-    └── raw/         # Source SVG layers (icons + wordmarks)
+    └── raw/          # Source SVG layers (icons + wordmarks)
 ```
 
 ## Running
 
-The project is fully static — no build required. You can open `index.html` directly, but a local server is recommended so the SVGs load correctly:
+The page itself needs no build to view. Open `index.html` directly, or (recommended) serve it so the SVGs load correctly:
 
 ```bash
 # Python 3
@@ -39,6 +45,21 @@ npx serve .
 
 Then open [http://localhost:8000](http://localhost:8000).
 
+## Pre-generating logo files (for the Link button)
+
+The **Link** button points to static files under `logos/`. Regenerate them whenever a
+logo's config or assets change:
+
+```bash
+npm run build      # or: node build-logos.js
+```
+
+This composes every view/theme/mono combination for each brand and writes them to
+`logos/<brand>/`. The files are produced with the exact same logic as the live
+preview and the SVG download, so they always match. Commit the `logos/` folder and
+deploy it alongside the page; the resulting public URLs look like
+`https://your-domain.com/logos/remit-ai/remit-ai-full-light.svg`.
+
 ## Configuration
 
 ### Version
@@ -46,7 +67,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 The header version comes from a single constant at the top of `script.js`:
 
 ```js
-const APP_VERSION = '1.1.1';
+const APP_VERSION = '1.3.0';
 ```
 
 Bump this value whenever you ship a change.
@@ -54,7 +75,7 @@ Bump this value whenever you ship a change.
 ### Adding a new logo
 
 1. Drop the SVG layers into `assets/raw/` (file names match the asset hashes exported from Figma).
-2. Add an entry to the `LOGOS` array in `script.js`:
+2. Add an entry to the `LOGOS` array in `logo-builder.js`:
    - `id`, `label` — identifier and display name.
    - `fullW` / `fullH` — full lockup dimensions (used for aspect ratio and export).
    - `nameFile` — the wordmark SVG.
@@ -65,3 +86,5 @@ Bump this value whenever you ship a change.
      - `inset` is `[top, right, bottom, left]` in percentages.
 
 For a text-only logo (like Zentist), set `textOnly: true`, provide only `nameFile`, and leave `layers` empty. Text-only logos are excluded from the Monochrome toggle and simply recolor with the theme.
+
+3. Run `npm run build` to regenerate the static files in `logos/`.

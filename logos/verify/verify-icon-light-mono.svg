@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none">
+<defs>
+<linearGradient id="logo-verify-0-paint0_linear_7_325" x1="12.522" y1="6.26099" x2="68.522" y2="118.261" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="1"/>
+</linearGradient>
+</defs>
+<defs>
+<linearGradient id="logo-verify-1-paint0_linear_7_321" x1="68.522" y1="6.26099" x2="12.522" y2="118.261" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<g transform="translate(1.484 7.742) scale(0.9998519322836977 0.9999518157434026)"><path id="Vector" opacity="0.3" d="M0 12.522L56 124.522L81.044 112L25.044 0L0 12.522Z" fill="url(#logo-verify-0-paint0_linear_7_325)"/></g>
+<g transform="translate(57.484 7.742) scale(0.9998519322836977 0.9999518157434026)"><path id="Vector" opacity="0.3" d="M56 0L0 112L25.044 124.522L81.044 12.522L56 0Z" fill="url(#logo-verify-1-paint0_linear_7_321)"/></g>
+<g transform="translate(56 112) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, black)"/></g>
+<g transform="translate(0 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, black)"/></g>
+<g transform="translate(112 0) scale(1 1)"><path id="Vector" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z" fill="var(--fill-0, black)"/></g>
+</svg>
