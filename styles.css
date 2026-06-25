@@ -259,6 +259,21 @@ body {
   color: #0485f7;
 }
 
+/* Кнопки на тёмном превью: светлый полупрозрачный фон, чтобы были видны */
+.zentist-logos--dark .logo-menu__trigger {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.zentist-logos--dark .logo-menu__trigger:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.zentist-logos--dark .logo-menu__trigger[aria-expanded='true'] {
+  background: rgba(4, 133, 247, 0.35);
+  color: #ffffff;
+}
+
 .logo-menu__label {
   display: inline-flex;
   align-items: center;

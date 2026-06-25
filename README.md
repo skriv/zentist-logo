@@ -24,7 +24,8 @@ Built with vanilla HTML, CSS, and JavaScript — no build step and no dependenci
 ├── styles.css        # Styles, themes, and responsive grid
 ├── logo-builder.js   # Shared config + SVG composition (browser + Node)
 ├── script.js         # Page UI: rendering, toggles, export, copy/link
-├── build-logos.js    # Node script that pre-generates all logo files
+├── build-logos.js    # Node script that pre-generates all logo files + logos-data.js
+├── logos-data.js     # Auto-generated: inlined SVG layers (lets export work from file://)
 ├── logos/            # Pre-generated SVG files (committed; served as URLs)
 │   └── <brand>/<brand>-<view>-<theme>[-mono].svg
 └── assets/
@@ -33,7 +34,10 @@ Built with vanilla HTML, CSS, and JavaScript — no build step and no dependenci
 
 ## Running
 
-The page itself needs no build to view. Open `index.html` directly, or (recommended) serve it so the SVGs load correctly:
+The page works with no build, either way:
+
+- **Open `index.html` directly** (double-click, `file://`). Save/Copy work offline because the SVG layers are inlined in `logos-data.js` (no `fetch` needed).
+- **Serve it** over HTTP (recommended for development):
 
 ```bash
 # Python 3
@@ -55,10 +59,13 @@ npm run build      # or: node build-logos.js
 ```
 
 This composes every view/theme/mono combination for each brand and writes them to
-`logos/<brand>/`. The files are produced with the exact same logic as the live
+`logos/<brand>/`. It also regenerates `logos-data.js` (the inlined SVG layers used
+for `file://` export). The files are produced with the exact same logic as the live
 preview and the SVG download, so they always match. Commit the `logos/` folder and
-deploy it alongside the page; the resulting public URLs look like
-`https://your-domain.com/logos/remit-ai/remit-ai-full-light.svg`.
+`logos-data.js`, and deploy them alongside the page; the resulting public URLs look
+like `https://your-domain.com/logos/remit-ai/remit-ai-full-light.svg`.
+
+Re-run `npm run build` whenever you change a logo's config or its source assets.
 
 ## Configuration
 

@@ -1,5 +1,5 @@
 // Версия виджета. Обновляйте только это значение при изменениях.
-const APP_VERSION = '1.5.0';
+const APP_VERSION = '1.5.1';
 
 const ASSET_BASE = 'assets/raw/';
 // Папка с предгенерированными логотипами (см. build-logos.js).
@@ -271,11 +271,19 @@ function closeAllMenus() {
 }
 
 async function fetchSvgText(file) {
-  const key = `${ASSET_BASE}${file}.svg`;
-  if (svgCache.has(key)) return svgCache.get(key);
-  const response = await fetch(key);
+  if (svgCache.has(file)) return svgCache.get(file);
+
+  // Встроенные слои (logos-data.js) — позволяют Save/Copy работать
+  // при открытии страницы как статического файла (file://), без fetch.
+  if (window.LOGO_ASSETS && window.LOGO_ASSETS[file]) {
+    const inlined = window.LOGO_ASSETS[file];
+    svgCache.set(file, inlined);
+    return inlined;
+  }
+
+  const response = await fetch(`${ASSET_BASE}${file}.svg`);
   const text = await response.text();
-  svgCache.set(key, text);
+  svgCache.set(file, text);
   return text;
 }
 
@@ -306,8 +314,9 @@ async function downloadSvg(logo) {
 
 async function downloadPng(logo) {
   const svg = await buildCompositeSvg(logo, state.view, state.theme, state.mono);
-  const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
+  // data: URI (а не blob:) — чтобы canvas-экспорт работал и при открытии
+  // страницы как статического файла (file://).
+  const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 
   const image = new Image();
   await new Promise((resolve, reject) => {
@@ -326,8 +335,6 @@ async function downloadPng(logo) {
   canvas.height = targetH;
   const ctx = canvas.getContext('2d');
   ctx.drawImage(image, 0, 0, targetW, targetH);
-
-  URL.revokeObjectURL(url);
 
   await new Promise((resolve) => {
     canvas.toBlob((pngBlob) => {
